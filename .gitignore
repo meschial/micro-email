@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/docker
 .env
 .env.backup
 .phpunit.result.cache
@@ -13,5 +14,4 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-/.docker
 *.log
