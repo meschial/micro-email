@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Mail\NewEvaluationCreated;
+use App\Mail\NewEvaluationCreated as MailNewEvaluationCreated;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -11,11 +11,11 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
 
-class EvaluationCreated implements ShouldQueue
+class NewEvaluationCreated implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $mail;
+    protected $email;
     /**
      * Create a new job instance.
      *
@@ -34,6 +34,6 @@ class EvaluationCreated implements ShouldQueue
     public function handle()
     {
         Mail::to($this->email)
-            ->send(new NewEvaluationCreated());
+            ->send(new MailNewEvaluationCreated());
     }
 }
